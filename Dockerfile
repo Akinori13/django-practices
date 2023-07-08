@@ -1,8 +1,17 @@
 # Dockerfile
-FROM python:3.11
+FROM python:3.10-slim-buster
 ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update
+
+RUN python -m venv venv
+ENV PATH="/venv/bin:$PATH"
+
 WORKDIR /app
+
 COPY requirements.txt /app/
+
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
 COPY . /app/
-CMD ["gunicorn", "config.wsgi:application", "-b", "0.0.0.0:8000"]

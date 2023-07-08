@@ -1,0 +1,11 @@
+{
+	"name": "Django Practices",
+	// Dockerfileでイメージ・コンテナを作成
+	"dockerFile": "../Dockerfile",
+	// リモート先のVS Codeにインストールする拡張機能
+	"customizations": {
+		"vscode": {
+			"extensions": ["ms-python.python", "ms-python.vscode-pylance"]
+		}
+	}
+}
