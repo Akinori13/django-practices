@@ -7,10 +7,29 @@
 		"vscode": {
 			"extensions": ["ms-python.python", "ms-python.vscode-pylance"],
 			"settings": {
+				"editor.formatOnSave": true,
+				// Python
+				"python.defaultInterpreterPath": "venv/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.lintOnSave": true,
+				// Pylance
+				"python.languageServer": "Pylance",
+				"python.analysis.completeFunctionParens": true,
+				// Linter(flake8)
+				"python.linting.flake8Path": "/venv/bin/flake8",
+				"python.linting.pylintEnabled": false,
+				"python.linting.flake8Enabled": true,
+				// Black
+				"python.formatting.blackPath": "/venv/bin/black",
 				"python.formatting.provider": "black",
 				"python.formatting.blackArgs": [
 					"--line-length=79"
-				]
+				],
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": true
+                    }
+                }
 			}
 		}
 	}
