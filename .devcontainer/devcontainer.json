@@ -5,7 +5,13 @@
 	// リモート先のVS Codeにインストールする拡張機能
 	"customizations": {
 		"vscode": {
-			"extensions": ["ms-python.python", "ms-python.vscode-pylance"]
+			"extensions": ["ms-python.python", "ms-python.vscode-pylance"],
+			"settings": {
+				"python.formatting.provider": "black",
+				"python.formatting.blackArgs": [
+					"--line-length=79"
+				]
+			}
 		}
 	}
 }
